@@ -1,3 +1,5 @@
+//Created by T1TAN Studio
+
 var cookie = {
 
   manager: [
@@ -6,7 +8,7 @@ var cookie = {
     []
   ],
 
-  //to add new cookie or update old use cookie.add(name, value[,options])
+  //to add new cookie or update old use cookie.add(name, value[,options]);
   add: function(name, value, options) {
     options = options || {};
 
@@ -41,18 +43,19 @@ var cookie = {
     this.manager[2][l] = options;
   },
 
-  //and to remove cookie use cookie.remove(name)
+  //and to remove cookie use cookie.remove(name);
   remove: function(name) {
     cookie.add(name, "", {
       expires: -1
     })
   },
 
-  //to get cookie-value use cookie.get(name)
+  //to get cookie-value use cookie.get(name);
   get: function(name) {
     for (var i = 0; i < cookie.manager.length; i++) {
       if (name == cookie.manager[0][i]) {
         return cookie.manager[1][i];
+        //it works only with cookie, which been added with cookie.add();
       }
     }
   }
